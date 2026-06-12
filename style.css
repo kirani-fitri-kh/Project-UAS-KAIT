@@ -1,0 +1,285 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffafb;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Warna Utama: Maroon (#721c24 atau #800020) */
+:root {
+    --maroon-dark: #5c0616;
+    --maroon-main: #800020;
+    --maroon-light: #ba435d;
+    --cream: #fdf5f6;
+}
+
+/* Header & Navbar */
+header {
+    background-color: var(--maroon-main);
+    color: white;
+    padding: 20px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #f3a6b4;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f3a6b4;
+}
+
+.cart-icon {
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    background: var(--maroon-dark);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+#cart-count {
+    background-color: #ff4757;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(92, 6, 22, 0.7), rgba(128, 0, 32, 0.8)), url('https://images.unsplash.com/photo-1511018556340-d16986a1c194?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.btn {
+    background-color: #fff;
+    color: var(--maroon-main);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--maroon-light);
+    color: white;
+}
+
+/* Products Section */
+.products-section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--maroon-dark);
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1e1e4;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    font-size: 60px;
+    margin-bottom: 15px;
+    background-color: var(--cream);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: var(--maroon-main);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background-color: var(--maroon-main);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background-color: var(--maroon-light);
+}
+
+/* Sidebar Keranjang */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    background-color: var(--maroon-dark);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-cart {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cart-items-container {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background-color: var(--cream);
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-checkout {
+    background-color: #25d366; /* Warna Hijau WA biar kontras */
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--maroon-dark);
+    color: #f3a6b4;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 14px;
+}

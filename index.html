@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maroon Sweets | Toko Kue & Permen Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Maroon<span>Sweets</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kelezatan Manis dalam Sentuhan Elegan</h1>
+            <p>Temukan berbagai pilihan dessert, cokelat, dan kue premium dengan rasa yang tak terlupakan.</p>
+            <a href="#products" class="btn">Belanja Sekarang</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2>Menu Andalan Kami</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">🎂</div>
+                <h3>Maroon Velvet Cake</h3>
+                <p class="price">Rp 45.000</p>
+                <button class="btn-add" onclick="addToCart('Maroon Velvet Cake', 45000)">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img">🍫</div>
+                <h3>Dark Choco Praline</h3>
+                <p class="price">Rp 35.000</p>
+                <button class="btn-add" onclick="addToCart('Dark Choco Praline', 35000)">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img">🧁</div>
+                <h3>Sweet Berry Cupcake</h3>
+                <p class="price">Rp 25.000</p>
+                <button class="btn-add" onclick="addToCart('Sweet Berry Cupcake', 25000)">Tambah ke Keranjang</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img">macaron</div>
+                <h3>Raspberry Macaron</h3>
+                <p class="price">Rp 30.000</p>
+                <button class="btn-add" onclick="addToCart('Raspberry Macaron', 30000)">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <p class="empty-msg">Keranjang masih kosong.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">Total: <span id="cart-total">Rp 0</span></div>
+            <button class="btn-checkout" onclick="checkout()">Checkout (WhatsApp)</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Maroon Sweets. Dibuat dengan ❤️ untuk Pencinta Manis.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
