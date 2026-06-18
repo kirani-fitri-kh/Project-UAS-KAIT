@@ -254,8 +254,11 @@ nav {
   justify-content: center; font-size: 3.5rem; overflow: hidden;
 }
 .product-img img {
-  width: 100%; height: 100%; object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 180px; /* Atur tinggi kotak foto agar seragam */
+    object-fit: cover; /* Membuat foto otomatis terpotong rapi tanpa gepeng */
+    border-radius: 8px;
+}
 }
 .product-info { padding: 14px 16px 16px; }
 .product-cat {
